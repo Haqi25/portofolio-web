@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import "./css/style.css";
+import { NavigationMenuDemo } from "./layouts/navbar";
+import { TypographyH1 } from "@/components/ui/typhography";
+import { ButtonDefault } from "@/components/ui/default-button";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,10 +27,33 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <div className="w-full py-4 sticky top-0 bg-background  z-50  ">
+          <div
+            className="container mx-auto flex flex-col items-center gap-4
+                  md:flex-row md:items-center md:justify-between  "
+          >
+            <div className="md:flex-1 md:pl-6 flex items-center gap-3 text-center md:text-left  ">
+              <Avatar>
+                <AvatarImage src="https://avatars.githubusercontent.com/u/6880091?v=4" />
+                <AvatarFallback>CN</AvatarFallback>
+              </Avatar>
+              <TypographyH1 />
+            </div>
+
+            <div className="md:flex-1 flex justify-center  ">
+              <NavigationMenuDemo />
+            </div>
+
+            <div className="md:flex-1  md:block md:text-end ">
+              <ButtonDefault />
+            </div>
+          </div>
+        </div>
+
         {children}
       </body>
     </html>
