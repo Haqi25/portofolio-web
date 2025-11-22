@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./css/style.css";
 import { NavigationMenuDemo } from "./layouts/navbar";
-import { TypographyH1 } from "@/components/ui/typhography";
+import { TypographyH4 } from "@/components/ui/typhography";
 import { ButtonDefault } from "@/components/ui/default-button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { Menu } from "lucide-react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,25 +32,32 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="w-full py-4 sticky top-0 bg-background  z-50  ">
-          <div
-            className="container mx-auto flex flex-col items-center gap-4
-                  md:flex-row md:items-center md:justify-between  "
-          >
-            <div className="md:flex-1 md:pl-6 flex items-center gap-3 text-center md:text-left  ">
+        <div className="w-full py-4 sticky top-0 bg-[hsl(var(--background)/0.8)] backdrop-blur-[12px] z-50 transition-all">
+          <div className="container mx-auto flex items-center justify-between px-4">
+           
+            <div className="flex items-center gap-3 md:flex-1">
               <Avatar>
                 <AvatarImage src="https://avatars.githubusercontent.com/u/6880091?v=4" />
                 <AvatarFallback>CN</AvatarFallback>
               </Avatar>
-              <TypographyH1 />
+              <TypographyH4 />
             </div>
 
-            <div className="md:flex-1 flex justify-center  ">
+            <div className="hidden md:flex md:flex-1 justify-center">
               <NavigationMenuDemo />
             </div>
 
-            <div className="md:flex-1  md:block md:text-end ">
-              <ButtonDefault />
+            <div className="flex items-center gap-2 md:flex-1 md:justify-end">
+              <button className="p-2 md:hidden flex items-center gap-3 md:flex-1">
+                <span className="  text-lg leading-none font-medium">Menu</span>
+                <Menu className="w-6 h-6" 
+                />
+                
+              </button>
+
+              <div className="hidden md:block">
+                <ButtonDefault />
+              </div>
             </div>
           </div>
         </div>
