@@ -12,5 +12,10 @@ function ButtonViewResume(){
    </Button>
 }
 
-
-export {ButtonViewResume}
+function ButtonViewWeb(){
+  return <Button className="cursor-pointer">
+    View Website
+    <ArrowUpRightIcon/>
+   </Button>
+}
+export {ButtonViewResume, ButtonViewWeb}

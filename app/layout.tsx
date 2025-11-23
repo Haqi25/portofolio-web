@@ -6,6 +6,9 @@ import { TypographyH4 } from "@/components/ui/typhography";
 import { ButtonDefault } from "@/components/ui/default-button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Menu } from "lucide-react";
+import { Footer2 } from "@/components/ui/footer";
+import "./footerStyle/style.css";
+import { Footer3 } from "@/components/ui/footer3";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -63,7 +66,13 @@ export default function RootLayout({
         </div>
 
         {children}
+    
+        <footer>
+        <Footer3/>
+      </footer>
+      
       </body>
+      
     </html>
   );
 }

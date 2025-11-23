@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function CardProfile() {
   return (
-    <div className="w-96 px-6 py-6  text-center bg-gray-900 rounded-lg lg:mt-0 xl:px-10">
+    <div className="w-96 px-6 py-6  text-center  bg-card text-card-foreground   rounded-xl border shadow-sm  lg:mt-0 xl:px-10">
       <div className="space-y-4 xl:space-y-6">
         <Image
           src="https://avatars.githubusercontent.com/u/6880091?v=4"
